@@ -10,15 +10,13 @@ from xml.sax import saxutils as su
 # #gFiles
 
 # define the name of the directory to be created
-gFilespath = "C:/Users/torakisi/Documents/personal/lexispan/gFiles"
+current_path = os.getcwd()
+gFilespath = current_path+ "/gFiles"
 
 if not os.path.exists(gFilespath):
-    try:
-        os.mkdir(gFilespath)
-    except OSError:
-        print ("Creation of the directory %s failed" % gFilespath)
-    else:
-        print ("Successfully created the directory %s " % gFilespath)
+    # If it doesn't exist, create it
+    os.makedirs(gFilespath)
+    print("Directory 'gFiles' created successfully.")
 
 
 for filename in glob.glob('G*.htm'):
@@ -96,14 +94,12 @@ for filename in glob.glob('G*.htm'):
 
 
 # define the name of the directory to be created
-gTablespath = "C:/Users/torakisi/Documents/personal/lexispan/gTables"
+gTablespath = current_path + "/gTables"
+
 if not os.path.exists(gTablespath):
-    try:
-        os.mkdir(gTablespath)
-    except OSError:
-        print ("Creation of the directory %s failed" % gTablespath)
-    else:
-        print ("Successfully created the directory %s " % gTablespath)
+    # If it doesn't exist, create it
+    os.makedirs(gTablespath)
+    print("Directory 'gTables' created successfully.")
 
 
 # #tables
